@@ -1,13 +1,26 @@
 <template>
-
-  <md-whiteframe md-elevation="5" class="main-toolbar">
+<div class="app-viewport" id="file-list">
+  
+  <md-whiteframe md-elevation="3" class="main-toolbar">
     <md-toolbar class="md-large">
-        <span class="main-title">Weather APP</span>
+      <div class="md-toolbar-container">
+  
+        <span style="flex: 1"></span>
+  
+      </div>
+  
+      <div class="md-toolbar-container">
+        <h2 class="md-title">Weather APP</h2>
+      </div>
     </md-toolbar>
-      <typeahead></typeahead>
   </md-whiteframe>
-</template>
+  
+  <main class="main-content">
+   <typeahead></typeahead>
+  </main>
+</div>
 
+</template>
 <script>
 import Typeahead from './components/Typeahead'
 
@@ -42,14 +55,48 @@ body,
   z-index: 10;
 }
 
+.md-fab {
+  margin: 0;
+  position: absolute;
+  bottom: -20px;
+  left: 16px;
+  z-index: 10;
+  
+  .md-icon {
+    color: #fff;
+  }
+}
+
+.md-title {
+  padding-left: 8px;
+  color: #fff;
+}
+
 .main-content {
   position: relative;
   z-index: 1;
   overflow: auto;
 }
 
-.main-title{
-  font-size: 35px;
+.md-list-action .md-icon {
+  color: rgba(#000, .26);
 }
 
+.md-avatar-icon .md-icon {
+  color: #fff !important;
+}
+
+.md-sidenav .md-list-text-container > :nth-child(2) {
+  color: rgba(#fff, .54);
+}
+
+.md-account-header {
+  .md-list-item:hover .md-button:hover {
+    background-color: inherit;
+  }
+
+  .md-avatar-list .md-list-item-container:hover {
+    background: none !important;
+  }
+}
 </style>
