@@ -82,7 +82,8 @@ export default {
       })
     },
     requestOptions () {
-      axios.get(`http://localhost:9000/api/cities/` + this.search)
+      console.log(process.env.APIURL)
+      axios.get(process.env.APIURL + this.search)
         .then(response => {
           this.options = []
           var newoptions = []
@@ -98,7 +99,7 @@ export default {
     },
     getWeathers () {
       console.log(this.Id)
-      axios.get(`http://localhost:9000/api/cities/weather/` + this.Id)
+      axios.get(process.env.APIURL + `weather/` + this.Id)
         .then(response => {
           this.count = response.data.message.body.cnt
           this.cityName = response.data.message.body.city.name
