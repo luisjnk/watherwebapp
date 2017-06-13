@@ -1,13 +1,11 @@
 <template>
-<div class="app-viewport" id="file-list">
+
   <md-whiteframe md-elevation="5" class="main-toolbar">
     <md-toolbar class="md-large">
         <span class="main-title">Weather APP</span>
     </md-toolbar>
+      <typeahead></typeahead>
   </md-whiteframe>
-  <typeahead></typeahead>
-  
-</div>
 </template>
 
 <script>
