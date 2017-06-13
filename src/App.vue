@@ -1,8 +1,8 @@
 <template>
 <div class="app-viewport" id="file-list">
-  <md-whiteframe md-elevation="3" class="main-toolbar">
+  <md-whiteframe md-elevation="5" class="main-toolbar">
     <md-toolbar class="md-large">
-         Weather APP
+        <span class="main-title">Weather APP</span>
     </md-toolbar>
   </md-whiteframe>
   <typeahead></typeahead>
@@ -44,51 +44,14 @@ body,
   z-index: 10;
 }
 
-.md-fab {
-  margin: 0;
-  position: absolute;
-  bottom: -20px;
-  left: 16px;
-  z-index: 10;
-  
-  .md-icon {
-    color: #fff;
-  }
-}
-
-.md-title {
-  padding-left: 8px;
-  color: #fff;
-}
-
 .main-content {
   position: relative;
   z-index: 1;
   overflow: auto;
 }
 
-.md-list-action .md-icon {
-  color: rgba(#000, .26);
+.main-title{
+  font-size: 35px;
 }
 
-.md-avatar-icon .md-icon {
-  color: #fff !important;
-}
-
-.md-sidenav .md-list-text-container > :nth-child(2) {
-  color: rgba(#fff, .54);
-}
-
-.md-account-header {
-  .md-list-item:hover .md-button:hover {
-    background-color: inherit;
-  }
-
-  .md-avatar-list .md-list-item-container:hover {
-    background: none !important;
-  }
-} 
-* {
-  box-sizing: border-box;
-}
 </style>

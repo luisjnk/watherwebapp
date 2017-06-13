@@ -45,6 +45,7 @@
 <script type="text/javascript">
 import axios from 'axios'
 import Cardweather from './Cardweather'
+import moment from 'moment'
 
 export default {
   components: {
@@ -104,10 +105,13 @@ export default {
           this.count = response.data.message.body.cnt
           this.cityName = response.data.message.body.city.name
           this.country = response.data.message.body.city.country
-          this.dayList = response.data.message.body.list
+          var days = response.data.message.body.list
+          days.forEach(function (day) {
+            var date = new Date(day.dt * 1000)
+            day.dt = moment(date).format('DD/MM/YYYY')
+          })
+          this.dayList = days
           console.log(this.dayList)
-          console.log(this.cityName)
-          console.log(this.country)
         })
         .catch(e => {
           console.log(e)
@@ -178,9 +182,9 @@ export default {
 <style type="text/css">
     .typeahead {
 
-        border-radius: 3px;
+        border-radius: 12px;
 
-        border: 1px solid #ccc;
+        border: 1px  #ccc;
 
         position: relative;
 
@@ -190,7 +194,7 @@ export default {
 
         width: 100%;
 
-        font-size: 14px;
+        font-size: 20px;
     }
 
     .typeahead__open {
